@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import Movie from './Movie';
 
 const initialMovie = {
   title: '',
   director: '',
   metascore: '',
+  stars: [],
 };
 
 const initialForm = {
@@ -30,17 +30,18 @@ const UpdateMovie = (props) => {
       .then((res) => {
         setMovie(res.data);
         setFormValues({ ...formValues, id: id, stars: res.data.stars });
-        console.log(res.data.stars);
       })
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [id]);
 
   const changeHandler = (evt) => {
     let value = evt.target.value;
     if (evt.target.name === 'metascore') {
       value = parseInt(value, 10);
+    } else if (evt.target.name === 'stars') {
+      value = evt.target.value.split(',');
     }
     setFormValues({
       ...formValues,
@@ -92,6 +93,13 @@ const UpdateMovie = (props) => {
           value={formValues.metascore}
           onChange={changeHandler}
           placeholder="Set Metascore"
+        />
+        <input
+          name="stars"
+          value={formValues.stars}
+          type="text"
+          onChange={changeHandler}
+          placeholder="Cast"
         />
         <button>Update!</button>
       </form>
