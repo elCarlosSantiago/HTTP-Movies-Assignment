@@ -2,7 +2,7 @@
 
 ## Instructions
 
-### Task 1: Project Setup 
+### Task 1: Project Setup
 
 - **Fork** this repository, then clone your fork.
 - Run `npm install` to download dependencies.
@@ -19,7 +19,7 @@
 - Add a button in the movie component that routes you to your new route with the movies's id as the URL param
 - The form should make a PUT request to the server when submitted
 - When the call comes back successfully, reset your form state and route the user to `/` where they will see the updated movie in the list
-- (Editing the movie stars can be a stretch problem... don't worry about it now. Move on to the next step, and come back and solve this at the end)
+- (Editing the movie stars c an be a stretch problem... don't worry about it now. Move on to the next step, and come back and solve this at the end)
 
 Movie object format:
 
@@ -65,4 +65,5 @@ Movie object format:
 - Style the app!
 
 ## Submission Format
-* [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+
+- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's Repo). **Please don't merge your own pull request**
